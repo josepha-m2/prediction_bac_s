@@ -18,10 +18,10 @@ Cette application utilise l'intelligence artificielle (Régression Logistique) p
 
 ## 📁 Structure du Projet
 ```text
-├── Predict_20260420.py      # Script principal de l'application Streamlit
+├── streamlit_app.py      # Script principal de l'application Streamlit
 ├── requirements.txt         # Dépendances du projet
 ├── ens.jpeg                 # Logo de l'établissement/application
-├── Traitement(model_logit).pkl # Modèle entraîné
-├── Traitement(scaler).pkl      # Normaliseur de données
-├── Traitement(features).pkl    # Noms des variables d'entrée
-└── Traitement(threshold).pkl   # Seuil de décision optimal
+├── model_logit.pkl # Modèle entraîné
+├── scaler.pkl      # Normaliseur de données
+├── features.pkl    # Noms des variables d'entrée
+└── threshold.pkl   # Seuil de décision optimal
