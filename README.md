@@ -20,7 +20,6 @@ Cette application utilise l'intelligence artificielle (Régression Logistique) p
 ```text
 ├── streamlit_app.py      # Script principal de l'application Streamlit
 ├── requirements.txt         # Dépendances du projet
-├── ens.jpeg                 # Logo de l'établissement/application
 ├── model_logit.pkl # Modèle entraîné
 ├── scaler.pkl      # Normaliseur de données
 ├── features.pkl    # Noms des variables d'entrée
