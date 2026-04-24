@@ -28,10 +28,10 @@ st.markdown("""
 # ─── LOAD MODEL ───
 @st.cache_resource
 def load_models():
-    model = joblib.load('Traitement(model_logit).pkl')
-    scaler = joblib.load('Traitement(scaler).pkl')
-    features_names = joblib.load('Traitement(features).pkl')
-    threshold = joblib.load('Traitement(threshold).pkl')
+    model = joblib.load('model_logit.pkl')
+    scaler = joblib.load('scaler.pkl')
+    features_names = joblib.load('features.pkl')
+    threshold = joblib.load('threshold.pkl')
     return model, scaler, features_names, threshold
 
 try:
