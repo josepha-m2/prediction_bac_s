@@ -144,22 +144,43 @@ if check_auth():
 
             if st.button("📊 Prédire"):
                 data = pd.DataFrame([[
-                    st.session_state.score_scientifique, absenteisme,
-                    st.session_state.progression, st.session_state.moy_premiere,
-                    st.session_state.sexe, st.session_state.retard
+                    st.session_state.score_scientifique,
+                    absenteisme,
+                    st.session_state.progression,
+                    st.session_state.moy_premiere,
+                    st.session_state.sexe,
+                    st.session_state.retard
                 ]], columns=features_names)
 
                 scaled = scaler.transform(data)
                 prob = model.predict_proba(scaled)[0, 1]
-                
-                with placeholder_resultat.container():
-                    st.markdown("---")
-                    st.subheader("📊 Résultat de la prédiction")
-                    if prob >= threshold:
-                        st.success(f"✅ ADMIS (Probabilité: {prob:.2%})")
-                        st.balloons()
-                    else:
-                        st.error(f"❌ ÉCHEC (Probabilité: {prob:.2%})")
+
+                st.markdown("---")
+
+                if prob >= threshold:
+                    color = "green"
+                    result = "✅ ADMIS"
+                    st.balloons()
+                else:
+                    color = "red"
+                    result = "❌ ÉCHEC"
+
+                st.markdown(f"<h1 style='text-align:center; color:{color};'>{result}</h1>", unsafe_allow_html=True)
+
+                if prob > 0.65:
+                    color_stat = "green"
+                    statut = "Favorable"
+                elif prob > 0.35:
+                    color_stat = "orange"
+                    statut = "Zone critique"
+                else:
+                    color_stat = "red"
+                    statut = "Risque élevé"
+
+                st.markdown(
+                    f"<h3 style='text-align:center;'>Statut : <span style='color:{color_stat};'>{statut}</span></h3>",
+                    unsafe_allow_html=True
+                )
 
             st.button("🔄 Recommencer", on_click=lambda: st.session_state.update(step=1))
 
