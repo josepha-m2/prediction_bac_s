@@ -156,8 +156,8 @@ if check_auth():
                     st.markdown("---")
                     st.subheader("📊 Résultat de la prédiction")
                     if prob >= threshold:
-                    st.success(f"✅ ADMIS (Probabilité: {prob:.2%})")
-                    st.balloons()
+                        st.success(f"✅ ADMIS (Probabilité: {prob:.2%})")
+                        st.balloons()
                     else:
                         st.error(f"❌ ÉCHEC (Probabilité: {prob:.2%})")
 
