@@ -25,7 +25,7 @@ def check_auth():
         st.session_state.authenticated = False
     
     if not st.session_state.authenticated:
-        st.markdown("<h2 style='text-align:center;'>🔐 Accès Sécurisé</h2>", unsafe_allow_html=True)
+        st.markdown("<h2 style='text-align:center;'>🔐Connexion</h2>", unsafe_allow_html=True)
         
         # Initialisation du compteur anti-bruteforce
         if "attempts" not in st.session_state:
