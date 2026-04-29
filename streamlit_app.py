@@ -13,7 +13,7 @@ st.set_page_config(page_title="Sécurité | Prédiction BAC S", layout="centered
 # Simulation d'un stockage sécurisé (SHA-256)
 # Le hash correspond à "josepha@2026"
 USER_AUTH = {
-    "Josepha": "f784793f18e983416467005086f68593309a0a4e76a667f502d3345862d2948c"
+    "Josepha": "050d9ab7531e9f3e308a49b304a30caa8db38014"
 }
 
 def hash_password(password):
