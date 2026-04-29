@@ -100,14 +100,14 @@ if check_auth():
         try: st.image("ens.jpeg", width=100)
         except: pass
     with col2:
-        st.markdown("<h2>Réussite scolaire - BAC S</h2><p style='color:gray;'>Connecté en tant que Josepha</p>", unsafe_allow_html=True)
+        st.markdown("<h2>Réussite scolaire - BAC S</h2>", unsafe_allow_html=True)
 
     st.progress(st.session_state.step / 3)
     st.write("---")
 
     # ─── CONTENU DU FORMULAIRE (Ton code original condensé) ───
     with st.container():
-        st.markdown('<div class="step-box">', unsafe_allow_html=True)
+        #st.markdown('<div class="step-box">', unsafe_allow_html=True)
 
         if st.session_state.step == 1:
             st.subheader("👤 Profil")
