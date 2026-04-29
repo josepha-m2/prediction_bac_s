@@ -139,7 +139,7 @@ if check_auth():
             col_b2.button("Suivant", on_click=next_step)
 
         elif st.session_state.step == 3:
-            st.subheader("🎯 Résultat")
+            st.subheader("🎯 Assiduité")
             absenteisme = st.number_input("Absentéisme (%)", 0.0, 100.0, 5.0)
 
             if st.button("📊 Prédire"):
@@ -151,6 +151,9 @@ if check_auth():
 
                 scaled = scaler.transform(data)
                 prob = model.predict_proba(scaled)[0, 1]
+                with placeholder_resultat.container():
+                st.markdown("---")
+                st.subheader("📊 Résultat de la prédiction")
 
                 if prob >= threshold:
                     st.success(f"✅ ADMIS (Probabilité: {prob:.2%})")
