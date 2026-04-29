@@ -153,8 +153,8 @@ if check_auth():
                 prob = model.predict_proba(scaled)[0, 1]
                 
                 with placeholder_resultat.container():
-                st.markdown("---")
-                st.subheader("📊 Résultat de la prédiction")
+                    st.markdown("---")
+                    st.subheader("📊 Résultat de la prédiction")
                     if prob >= threshold:
                     st.success(f"✅ ADMIS (Probabilité: {prob:.2%})")
                     st.balloons()
