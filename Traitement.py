@@ -290,10 +290,10 @@ for _, row in sig_vars.iterrows():
     direction = "↑ Facteur de RÉUSSITE" if row['Odds Ratio'] > 1 else "↓ Facteur de RISQUE"
     print(f"   • {row['Variable']:30s}  OR={row['Odds Ratio']:.3f}  {row['Sig.']:3s}  → {direction}")
 
-joblib.dump(logit_sk, 'Traitement(model_logit).pkl')
-joblib.dump(scaler, 'Traitement(scaler).pkl')
-joblib.dump(FEATURES, 'Traitement(features).pkl')
-joblib.dump(best_thresh, 'Traitement(threshold).pkl')
+joblib.dump(logit_sk, 'model_logit.pkl')
+joblib.dump(scaler, 'scaler.pkl')
+joblib.dump(FEATURES, 'features.pkl')
+joblib.dump(best_thresh, 'threshold.pkl')
 
 print("✅ Modèle sauvegardé")
 
